@@ -4,17 +4,19 @@ services:
   nestapi:
     build: .
     entrypoint: dockerize -wait tcp://db:5432 -timeout 40s ./.docker/entrypoint.sh
-    container_name: imersao-esquenta-fullcycle-3-api-app
+    container_name: imersaoFC3-nestapi
     ports:
       - 3000:3000
     volumes:
       - .:/home/node/app
-    depends_on: 
+    depends_on:
       - db
+    extra_hosts:
+      - 'host.docker.internal:172.17.0.1'
 
   db:
     build: .docker/postgres
-    container_name: imersao-esquenta-fullcycle-3-api-db
+    container_name: imersaoFC3-db
     restart: always
     tty: true
     environment:

@@ -2,8 +2,8 @@ POST http://localhost:3000/products
 Content-type: application/json
 
 {
-    "name": "",
-    "price": -20.00
+    "name": "Carro Prata",
+    "price": 500.00
 }
 
 ###
