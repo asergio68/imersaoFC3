@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  goapp:
+    build: .
+    container_name: goapp
+    volumes:
+      - .:/go/src/
+    ports:
+      - 8585:8585

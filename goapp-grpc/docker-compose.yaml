@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  goapp-grpc:
+    build: .
+    container_name: goapp-grpc
+    volumes:
+      - .:/go/src/
+    ports:
+      - 8585:8585
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
